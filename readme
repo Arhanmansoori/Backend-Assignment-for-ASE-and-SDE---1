@@ -1,3 +1,7 @@
+Here's the complete and updated README file, including the instructions for running the Streamlit application.
+
+---
+
 # README for PDF Chat Django Project
 
 ## Project Overview
@@ -9,6 +13,7 @@ This Django project provides an API for uploading and processing multiple PDF fi
 - **Upload and process multiple PDFs.**
 - **Store and manage processed text chunks in a vector store.**
 - **Query the processed data through a question-answering API.**
+- **Interactive frontend for querying PDFs using Streamlit.**
 
 ## Prerequisites
 
@@ -16,14 +21,14 @@ This Django project provides an API for uploading and processing multiple PDF fi
 - Django 5.1.1
 - SQLite3 for database management (default: SQLite)
 - Google Generative AI API key (gemeni-1.5-pro)
-
+- Streamlit for frontend
 
 ## Installation
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/pdf-chat-django.git
-cd pdf-chat-django
+git clone https://github.com/Arhanmansoori/Backend-Assignment-for-ASE-and-SDE---1.git
+cd Backend-Assignment-for-ASE-and-SDE---1
 ```
 
 ### 2. Set Up a Virtual Environment
@@ -51,6 +56,22 @@ Replace the placeholder API key in the code or environment with your actual API 
 ```bash
 python manage.py runserver
 ```
+
+### 7. Running Streamlit Application
+
+To run the interactive Streamlit frontend, follow these steps:
+
+1. Ensure Streamlit is installed:
+   ```bash
+   pip install streamlit
+   ```
+
+2. Run the Streamlit application:
+   ```bash
+   streamlit run project_streamlit.py
+   ```
+
+This will open a web interface where you can interact with the uploaded PDFs and ask questions about them.
 
 ## API Endpoints
 
@@ -98,6 +119,7 @@ pdfchat/
 ├── serializers.py           # Serializer for PDF document handling.
 ├── views.py                 # API views for file upload and question-answering.
 ├── urls.py                  # URL configuration for API endpoints.
+├── project_streamlit.py      # Streamlit app for querying PDFs.
 │
 ├── migrations/              # Django migrations folder.
 ├── static/                  # Static files (if any).
@@ -109,6 +131,8 @@ pdfchat/
 1. **Upload PDFs**: Use Postman or any API client to send a `POST` request to `http://127.0.0.1:8000/api/upload_pdf/` with multiple PDFs.
    
 2. **Ask Questions**: After processing the PDFs, use the `/ask_question/` endpoint at `http://127.0.0.1:8000/api/ask_question/` to ask questions about the PDF content.
+
+3. **Streamlit Interface**: After running the Streamlit application (`streamlit run project_streamlit.py`), navigate to the provided local URL to interact with the PDFs via a simple web interface.
 
 ## Notes
 
@@ -129,8 +153,6 @@ pdfchat/
 3. Make your changes.
 4. Submit a pull request.
 
-
-
 ## Contact
 
-For any inquiries, please contact [arhanmansoori12345@gmail.com,6281003819].
+For any inquiries, please contact [arhanmansoori12345@gmail.com, 6281003819].

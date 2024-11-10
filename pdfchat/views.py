@@ -15,7 +15,7 @@ import os
 import tempfile
 
 # API key management
-API_KEYS = ["AIzaSyA7-lUzRsmTsocpAqsGs3-_F7-WYm8vIjE"]
+API_KEYS = ["GEMINI API KEY ----- HERE  "]
 api_key_cycle = itertools.cycle(API_KEYS)
 
 def configure_api():
