@@ -1,12 +1,11 @@
-Here's the complete and updated README file, including the instructions for running the Streamlit application.
-
----
-
 # README for PDF Chat Django Project
 
 ## Project Overview
 
 This Django project provides an API for uploading and processing multiple PDF files and querying them using AI-powered question-answering capabilities. It uses **LangChain**, **Google Generative AI**, and **FAISS** for text processing, embedding generation, and similarity search.
+
+# video explaining the project : 
+https://www.loom.com/share/03d14e92ca7f4815aaa59843b85c0236?sid=949dab6e-81d0-4891-bafa-3614c6afaec6
 
 ## Features
 
