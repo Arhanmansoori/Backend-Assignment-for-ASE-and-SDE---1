@@ -1,0 +1,136 @@
+# README for PDF Chat Django Project
+
+## Project Overview
+
+This Django project provides an API for uploading and processing multiple PDF files and querying them using AI-powered question-answering capabilities. It uses **LangChain**, **Google Generative AI**, and **FAISS** for text processing, embedding generation, and similarity search.
+
+## Features
+
+- **Upload and process multiple PDFs.**
+- **Store and manage processed text chunks in a vector store.**
+- **Query the processed data through a question-answering API.**
+
+## Prerequisites
+
+- Python 3.12
+- Django 5.1.1
+- SQLite3 for database management (default: SQLite)
+- Google Generative AI API key (gemeni-1.5-pro)
+
+
+## Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/pdf-chat-django.git
+cd pdf-chat-django
+```
+
+### 2. Set Up a Virtual Environment
+```bash
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set Up the Database
+Run the following commands to set up the database:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 5. Configure Google Generative AI API Key
+Replace the placeholder API key in the code or environment with your actual API key.
+
+### 6. Start the Development Server
+```bash
+python manage.py runserver
+```
+
+## API Endpoints
+
+### 1. **Upload PDFs**
+   **Endpoint**: `http://127.0.0.1:8000/api/upload_pdf/`  
+   **Method**: `POST`  
+   **Description**: Upload multiple PDF files for processing.
+
+   **Request**:
+   - **Content-Type**: `multipart/form-data`
+   - **Key**: `files` (can accept multiple files)
+
+   **Response**:
+   ```json
+   {
+       "message": "PDFs uploaded and processed successfully."
+   }
+   ```
+
+### 2. **Ask a Question**
+   **Endpoint**: `http://127.0.0.1:8000/api/ask_question/`  
+   **Method**: `POST`  
+   **Description**: Ask a question based on the content of uploaded PDFs.
+
+   **Request**:
+   ```json
+   {
+       "question": "What is the main topic of the document?"
+   }
+   ```
+
+   **Response**:
+   ```json
+   {
+       "answer": "The document discusses..."
+   }
+   ```
+
+## Folder Structure
+
+```
+pdfchat/
+│
+├── models.py                # Database models for storing PDF information.
+├── serializers.py           # Serializer for PDF document handling.
+├── views.py                 # API views for file upload and question-answering.
+├── urls.py                  # URL configuration for API endpoints.
+│
+├── migrations/              # Django migrations folder.
+├── static/                  # Static files (if any).
+└── templates/               # Templates for frontend (if applicable).
+```
+
+## Usage
+
+1. **Upload PDFs**: Use Postman or any API client to send a `POST` request to `http://127.0.0.1:8000/api/upload_pdf/` with multiple PDFs.
+   
+2. **Ask Questions**: After processing the PDFs, use the `/ask_question/` endpoint at `http://127.0.0.1:8000/api/ask_question/` to ask questions about the PDF content.
+
+## Notes
+
+- **Vector Store**: The FAISS index is saved locally as `faiss_index`.
+- **Temporary Files**: PDFs are processed and removed after indexing.
+- **Security**: Ensure the API keys are kept secure in production environments.
+
+## Future Improvements
+
+- Add user authentication for secure API access.
+- Implement a frontend for easier interaction.
+- Use cloud storage for handling large file uploads.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
+
+
+
+## Contact
+
+For any inquiries, please contact [arhanmansoori12345@gmail.com,6281003819].
